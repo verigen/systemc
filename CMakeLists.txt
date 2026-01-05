@@ -281,6 +281,10 @@ option (ENABLE_PTHREADS
         "Use POSIX threads for SystemC processes instead of QuickThreads on Unix or Fiber on Windows."
         OFF)
 
+option (ENABLE_LIBACO
+        "Use libaco for SystemC processes instead of QuickThreads on Unix or Fiber on Windows."
+        OFF)
+
 option (ENABLE_STD_THREADS
         "Use standard library threads for SystemC processes instead of QuickThreads on Unix or Fiber on Windows."
         OFF)
