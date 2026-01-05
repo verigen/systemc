@@ -33,11 +33,7 @@
 #include "sysc/kernel/sc_cor.h"
 #include "sysc/kernel/sc_cmnhdr.h"
 
-// Include libaco headers
-extern "C" {
-#include "aco.h"
-#include "aco_assert_override.h"
-}
+#include "sysc/packages/libaco/aco.h"
 
 namespace sc_core {
 

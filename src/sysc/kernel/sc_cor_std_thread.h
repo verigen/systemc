@@ -36,6 +36,7 @@
 #include "sysc/kernel/sc_cor.h"
 #include "sysc/kernel/sc_cmnhdr.h"
 #include <thread>
+#include <condition_variable>
 
 namespace sc_core {
 
@@ -61,9 +62,9 @@ class sc_cor_std_thread : public sc_cor
     virtual ~sc_cor_std_thread();
 
     // module method invocator (starts thread execution)
-    static void invoke_thread( void* context_p ); 
+    static void invoke_thread( void* context_p );
 
-  public: 
+  public:
 
     sc_cor_fn*                   m_cor_fn;       // Core function.
     void*                        m_cor_fn_arg;   // Core function argument.
@@ -117,7 +118,7 @@ class sc_cor_pkg_std_thread
     // get the main coroutine
     virtual sc_cor* get_main();
 
-private: 
+private:
 
     sc_cor_std_thread            m_main_cor;     // Main coroutine
     sc_cor_std_thread*           m_curr_cor;     // Active coroutine

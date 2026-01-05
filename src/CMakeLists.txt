@@ -406,6 +406,12 @@ set(SYSTEMC_CORE_SRC
         tlm_utils/simple_initiator_socket.h
         tlm_utils/simple_target_socket.h
         tlm_utils/tlm_quantumkeeper.h
+        # Libaco
+        $<$<BOOL:${ENABLE_LIBACO}>:
+          sysc/packages/libaco/aco.c
+          sysc/packages/libaco/aco.h
+          sysc/packages/libaco/acosw.S
+        >
         # QuickThreads
         $<$<BOOL:${QT_ARCH}>:
           sysc/packages/qt/qt.c
@@ -423,6 +429,7 @@ set(SYSTEMC_CORE_SRC
         )
 
 set(SYSTEMC_CORE_SRC_PRIVATE
+        sysc/kernel/sc_cor_aco.h
         sysc/kernel/sc_cor_fiber.h
         sysc/kernel/sc_cor_pthread.h
         sysc/kernel/sc_cor_qt.h
